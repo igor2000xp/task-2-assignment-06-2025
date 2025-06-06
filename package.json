@@ -10,7 +10,13 @@
     "format:html": "prettier --write \"*.html\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["css", "responsive", "bug-fix", "navigation", "menu"],
+  "keywords": [
+    "css",
+    "responsive",
+    "bug-fix",
+    "navigation",
+    "menu"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
