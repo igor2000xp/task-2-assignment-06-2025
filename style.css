@@ -1,0 +1,246 @@
+/* Base Navigation Styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the checkbox input */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon Styles */
+.hamburger {
+  display: none; /* Hidden on desktop by default */
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+  position: relative;
+}
+
+/* Hamburger Line - Main line and pseudo-elements for 3-line icon */
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Top line (::before) */
+.hamburger-line::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Bottom line (::after) */
+.hamburger-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for hamburger */
+.hamburger:hover .hamburger-line,
+.hamburger:hover .hamburger-line::before,
+.hamburger:hover .hamburger-line::after {
+  background-color: #666;
+}
+
+/* Desktop Menu Styles */
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.menu li {
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu li:hover {
+  color: #666;
+}
+
+/* Main Content Styles */
+.main-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.main-content h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  margin-bottom: 1rem;
+}
+
+.main-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.main-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Styles - Hover Dropdown */
+@media (max-width: 767.98px) {
+  /* Show hamburger icon on mobile */
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  /* Mobile menu positioning - dropdown style */
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    gap: 0;
+
+    /* Initially hidden - slides up */
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menu li {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0;
+  }
+
+  .menu li:last-child {
+    border-bottom: none;
+  }
+
+  .menu li:hover {
+    background-color: #f8f9fa;
+  }
+
+  /* Show menu on hamburger hover */
+  .hamburger:hover + .menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Keep menu visible when hovering over the menu itself */
+  .menu:hover {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Navigation wrapper to maintain hover state */
+  .nav:hover .menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Desktop Responsive - Hide hamburger and show horizontal menu */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+
+    background: #fff;
+    transform: translateY(-150%);
+    transition: 0.3s ease;
+  }
+
+  .menu.open {
+    transform: translateY(0);
+  }
+} */
+
+/* patched-styles.css */
+
+@media (max-width: 767.98px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 70%;
+    background: #fff;
+    transform: translateY(-150%);
+    transition: 0.3s ease;
+  }
+  .menu.open {
+    transform: translateY(0);
+  }
+}

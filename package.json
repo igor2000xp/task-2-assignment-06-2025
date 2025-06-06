@@ -1,0 +1,25 @@
+{
+  "name": "task-2-assignment-06-2025",
+  "version": "1.0.0",
+  "description": "CSS Responsive Menu Bug Fix - Eliminating the Ghosting Effect at 768px Breakpoint",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"*.{html,css,js,json,md}\"",
+    "format:css": "prettier --write \"*.css\"",
+    "format:html": "prettier --write \"*.html\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "responsive",
+    "bug-fix",
+    "navigation",
+    "menu"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
